@@ -1,4 +1,4 @@
-# Clase_Introduccion_a_R
+# Introduccion_a_R
 ## author: "Damaris Esquen"
 ## Fecha: "12/02/2025"
 
