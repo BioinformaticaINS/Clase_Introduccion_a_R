@@ -2,10 +2,12 @@
 ## author: "Damaris Esquen"
 ## Fecha: "12/02/2025"
 
-# 1. INTRODUCCION A R /2. INSTALACION ----
+# 1. INTRODUCCION A R /2. INSTALACION
+
+```R
 getwd()
 setwd("D:/cursoR/")
-
+```
 # En mi primer script realizare la suma de dos numeros
 1 + 2
 
