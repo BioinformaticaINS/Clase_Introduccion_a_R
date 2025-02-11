@@ -2,23 +2,35 @@
 ## author: "Damaris Esquen"
 ## Fecha: "12/02/2025"
 
-# 1. INTRODUCCION A R /2. INSTALACION
+### 1. INTRODUCCION A R /2. INSTALACION
 
 ```R
 getwd()
 setwd("D:/cursoR/")
 ```
-# En mi primer script realizare la suma de dos numeros
+### En mi primer script realizare la suma de dos numeros
+
+```R
 1 + 2
+```
 
-# Consultamos el directorio de trabajo
+### Consultamos el directorio de trabajo
+
+```R
 getwd()
+```
 
-# Establecemos el directorio de trabajo
+### Establecemos el directorio de trabajo
+
+```R
 setwd("D:/cursoR")
-
+```
 # crear carpetas
+
+```R
 dir.create("D:/cursoR/AQUA")
+```
+
 # borrar carpetas
 unlink("D:/cursoR/AQUA", recursive = TRUE)
 dir.create("D:/cursoR/data")
