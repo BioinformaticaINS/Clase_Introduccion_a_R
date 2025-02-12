@@ -69,6 +69,14 @@ Esperamos a que termine la instalación anterior para ejecutar nuevamente:
 sudo dpkg -i rstudio-2024.12.0-467-amd64.deb
 ```
 
+Además vamos a instalar libcurl en el sistema para facilitar la descargar de paquetes
+y verificar pkg-config esta instalado
+```BASH
+sudo apt update
+sudo apt install libcurl4-openssl-dev
+sudo apt install pkg-config
+```
+
 De esa forma la instalación del Rstudio estará completa. Podemos hacer la búsqueda del aplicativo en los `puntos` en la parte inferior de barra de trabajo.
 
 ## 1. INTRODUCCION A R /2. INSTALACION ----
