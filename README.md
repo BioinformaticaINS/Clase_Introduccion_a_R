@@ -361,7 +361,16 @@ Tenemos variables continuas, discretas, categóricas y lógicas
 
 ### 5.4 Estructura de datos
 
-### 5.4.1 Vector ----
+### 5.4.1 Escalar
+```R
+x
+y
+z
+p
+
+```
+
+### 5.4.2. Vector 
 
 #### vectores con c
 
@@ -410,7 +419,7 @@ y <- c(1:8)
 x %in% y
 ```
 
-## 5.4.2 Matrices ----
+## 5.4.3 Matrices ----
 
 ### matrix() crea matrices desde cero con datos, filas y columnas.
 
@@ -446,7 +455,7 @@ matrix5 <- t(matrix4)
 matrix5
 dim(matrix5)
 ```
-## 5.4.3 array ----
+## 5.4.4 array ----
 
 ```R
 mi_array <- array(data = 1:16, dim = c(2, 2, 2, 2))
@@ -454,7 +463,7 @@ mi_array
 dim(mi_array)
 ```
 
-## 5.4.4 Dataframes ----
+## 5.4.5 Dataframes ----
 
 ```R
 datos_iris <- iris
@@ -531,7 +540,7 @@ datos$funcion_gen <- rep(c("Metabolismo", "Señalización", "Apoptosis", "Inflam
 datos
 ```
 
-## Tibble ----
+## 5.4.5.1 Tibble 
 
 ### Recordemos que estructura tiene la data iris
 
@@ -564,7 +573,7 @@ tibble_iris
 tibble(x = 1:5, y = 1, z = x^2 + y)
 ```
 
-## 5.4.5 Listas ----
+## 5.4.6 Listas ----
 
 ### Creamos una lista
 
