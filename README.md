@@ -433,17 +433,9 @@ matrix2 <- matrix(data = 1:10, nrow = 5, ncol = 2)
 ```R
 nickname <- c("pud", "gab", "Lu")
 animal <- c("perro", "raton", "gato")
-```
-
-### rbind() combina vectores como filas.
-
-```R
+# rbind() combina vectores como filas.
 matrix3 <- rbind(nickname, animal)
-```
-
-### cbind() combina vectores como columnas.
-
-```R
+# cbind() combina vectores como columnas.
 matrix4 <- cbind(nickname, animal)
 matrix4
 ```
@@ -469,21 +461,14 @@ dim(mi_array)
 datos_iris <- iris
 ```
 
-### ver las primeras 6 filas del dataframe
+### Analicemos el dataframe iris
 
 ```R
+# Ver las primeras 6 filas del dataframe
 head(datos_iris)
-```
-
-### puedes especificar el numero de filas a mostrar
-
-```R
+# puedes especificar el numero de filas a mostrar
 head(datos_iris, 3)
-```
-
-### ver la estructura del dataframe
-
-```R
+# ver la estructura del dataframe
 str(datos_iris)
 ```
 
@@ -525,9 +510,6 @@ ncol(df)
 # declarar un vector
 log2FoldChange <- c(rep("0.000",4), 0.396, 0.433, 0.433, 0.433)
 log2FoldChange
-```
-
-```R
 # agregarlo al df
 datos <- data.frame(df, log2FoldChange)
 datos
@@ -563,6 +545,7 @@ library(tidyverse)
 #### Opción A
 
 ```R
+# Obtenemos un tibble mediante coerción
 tibble_iris <- as_tibble(iris)
 tibble_iris
 ```
@@ -570,6 +553,7 @@ tibble_iris
 #### Opción B 
 
 ```R
+# creamos un tibble
 tibble(x = 1:5, y = 1, z = x^2 + y)
 ```
 
@@ -582,27 +566,20 @@ mi_lista <- list(sex, matrix1, df)
 mi_lista
 ```
 
-### largo de una lista : número de elementos que contiene
+### Analizo una lista
 
 ```R
+# largo de una lista : número de elementos que contiene
 length(mi_lista)
-```
-
-### Dimensión de una lista
-
-```R
+# Dimensión de una lista
 dim(mi_lista)
-```
-
-### clase de una lista
-
-```R
+# clase de una lista
 class(mi_lista)
 ```
 
 ## 6. Manipulación de datos con R base ----
 
-### Recordemos como obtenemos información de la estructura
+### Recordemos como obtenemos información de una estructura de datos
 
 ```R
 dim(df) 		# dimensiones [fila, columna] 
@@ -631,29 +608,13 @@ cat("El número de columnas es:", ncol(df), "\n")
 
 ```R
 v <- c(10, 20, 30, 40, 50)
-```
-
-#### Para seleccionar un solo elemento
-
-```R
+# Para seleccionar un solo elemento
 v[2]
-```
-
-#### Para seleccionar múltiples elementos
-
-```R
+# Para seleccionar múltiples elementos
 v[c(1, 3, 5)]
-``` 
-
-#### Para excluir elementos
-
-```R
+# Para excluir elementos
 v[-2]
-``` 
-
-#### Para indexar con condiciones
-
-```R
+# Para indexar con condiciones
 v[v > 25]
 ```
 
