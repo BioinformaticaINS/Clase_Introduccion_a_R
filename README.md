@@ -171,9 +171,10 @@ detach("package:dplyr", unload = TRUE) #unload = TRUE, además de desvincular el
 ```R
 # Instalamos el administrador de Bioconductor: BiocManager
 if (!require("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-# Instalamos DESesq2
+    install.packages("BiocManager")
+
 BiocManager::install("DESeq2")
+
 ```
 
 ## 4. IMPORTACIÓN/GUARDADO DE DATOS EN R----
