@@ -177,6 +177,29 @@ BiocManager::install("DESeq2")
 
 ```
 
+Si ocurriera un problema como este: 
+```R
+ERROR: dependencies ‘GenomicRanges’, ‘SummarizedExperiment’, ‘genefilter’, ‘geneplotter’ are not available for package ‘DESeq2’
+* removing ‘/home/ins_user/R/x86_64-pc-linux-gnu-library/4.1/DESeq2’
+The downloaded source packages are in
+	‘/tmp/RtmpuYGIRo/downloaded_packages’
+Installation paths not writeable, unable to update packages
+  path: /usr/lib/R/library
+  packages:
+    boot, class, cluster, codetools, foreign, KernSmooth, lattice, mgcv, nlme, nnet,
+    rpart, spatial, survival
+There were 13 warnings (use warnings() to see them)
+```
+
+Ejecutar este código 
+```R
+BiocManager::install("DESeq2", lib = "~/R/x86_64-pc-linux-gnu-library/4.1")
+install.packages("curl")
+install.packages("RCurl")
+install.packages("httr")
+```
+
+
 ## 4. IMPORTACIÓN/GUARDADO DE DATOS EN R----
 
 ### Input y Output dir
