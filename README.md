@@ -424,6 +424,7 @@ x %in% y
 ### matrix() crea matrices desde cero con datos, filas y columnas.
 
 ```R
+# Creamos matrices con la función matrix( data, nrow, ncol)
 matrix1 <- matrix(data = 1:10, nrow = 2, ncol = 5)
 matrix2 <- matrix(data = 1:10, nrow = 5, ncol = 2)
 ```
@@ -431,6 +432,7 @@ matrix2 <- matrix(data = 1:10, nrow = 5, ncol = 2)
 ### Crear matrices con rbind() y cbind()
 
 ```R
+# Creamos matrices a partir de vectores con rbind() y cbind()
 nickname <- c("pud", "gab", "Lu")
 animal <- c("perro", "raton", "gato")
 # rbind() combina vectores como filas.
@@ -443,18 +445,20 @@ matrix4
 ### tansponer matrix
 
 ```R
+# Transponemos matrices con la funcion t()
 matrix5 <- t(matrix4)
 matrix5
 dim(matrix4)
 dim(matrix5)
 ```
 ## 5.4.4 array ----
-
+Creo un array con la función array(data, dim)
 ```R
 mi_array <- array(data = 1:16, dim = c(2, 2, 2, 2))
 mi_array
 dim(mi_array)
 ```
+En este ejemplo crearemos un array de cuatro dimensiones
 
 ## 5.4.5 Dataframes ----
 
