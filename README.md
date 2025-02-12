@@ -156,8 +156,8 @@ datos_iris = iris
 install.packages("cowsay")
 library(cowsay)
 say( what = "Hola soy michimichi", by = "cat")
-?say
 ```
+**Ejercicio** Que argumentos y opciones tiene la funcion say del paquete cowsay
 
 ```R
 # usando pacman
