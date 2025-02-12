@@ -610,6 +610,12 @@ cat("El número de columnas es:", ncol(df), "\n")
 ### 6.1 Indexación de objetos en R
 
 #### En vectores
+Para indexar un elemento dentro de un vector usando [ ], necesitamos escribir el número de posición del elemento dentro de los corchetes [ ]
+	Nombre_del_vector[ posición_del_elemento]
+Podemos incluso remover valores usando: -
+	Nombre_del_vector[ -posición_del_elemento_a_remover]
+Podemos indexar con condiciones
+	Nombre_del_vector[ nombre_del vector_y_condición]
 
 ```R
 v <- c(10, 20, 30, 40, 50)
@@ -624,7 +630,13 @@ v[v > 25]
 ```
 
 #### Indexación de matrices y dataframes
-Indexación de matrices y dataframes [filas , columnas ]
+Para indexar un data.frame, debes especificar la posición de los valores dentro de sus dos dimensiones (filas y columnas), de la siguiente manera:
+Puedes seleccionar usando numero de fila o columna
+	nombre_del_data_frame[número_de_fila, número_de_columna] 
+
+Puedes seleccionar usando nombre de la fila o columna, incluyendo o no varias columnas
+	nombre_del_data_frame[número_de_fila, nombre_de_columna] 
+
 
 ```R
 df <- data.frame(genes = paste0("Gen", c(1:8)), 
@@ -644,6 +656,7 @@ df[,c("genes", "condicion_exp")]
 ```
 
 ### Alternativamente podemos usar $
+El operador $ se puede utilizar para seleccionar, asignar nuevos valores o crear nuevas variables (columnas) en data.frames, así como elementos en listas.
 
 #### $ nos sirve para seleccionar = indexing
 
