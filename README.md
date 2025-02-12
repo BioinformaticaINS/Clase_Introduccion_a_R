@@ -540,6 +540,7 @@ str(iris)
 ### Para manipular tibble necesitamos el paquete tidyverse
 
 ```R
+install.packages("ragg")
 install.packages("tidyverse")
 library(tidyverse)
 
