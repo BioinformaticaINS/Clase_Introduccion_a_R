@@ -232,17 +232,27 @@ write.csv(datos_iris, file = "/home/ins_user/cursoR/data/datos_iris_2.csv")
 
 ### Guardar archivos, objetos y sesión  
 
+Guardar un archivo csv
 ```R
-# Guardar un archivo csv
+# Guardar un archivo csv - reescribir
 write.csv(datos_iris, file = paste0(data_dir, "datos_iris.csv"))
+```
+Guardar un objeto y la sesión R
+```R
 # Guardar un objeto
 save(a, file = paste0(results_dir,"result_a.RData"))
 # Obtener información de las versiones de los programas
 sessionInfo()
 # Guardar la sesión en R
 save.image(file <- paste0(results_dir, "Mi_sesion.RData" ))
-# Guardar en formato de excel
+```
+Guardar en formato de excel
+```R
+# Instalamos la librería openxlsx
+install.packages("openxlsx")
+# Llamamos a la librería
 library(openxlsx)
+# Guardar excel
 write.xlsx(datos_iris, "data/datos.xlsx")
 write.xlsx(datos_iris, "data/datos_table.xlsx", asTable = TRUE)
 ```
