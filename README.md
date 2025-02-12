@@ -79,31 +79,32 @@ De esa forma la instalación del Rstudio estará completa. Podemos hacer la bús
 1 + 2
 ```
 
-### Consultamos el directorio de trabajo
+### Directorio de trabajo
 
 ```R
+# Consultamos el directorio de trabajo
 getwd()
-```
-### Establecemos el directorio de trabajo
-
-```R
+# Establecemos el directorio de trabajo
 setwd("/home/ins_user/cursoR")
 ```
 
-### Crear carpetas
+### Creamos y borramos carpetas
 
 ```R
+#  Creamos Carpetas
 dir.create("/home/ins_user/cursoR/AQUA")
-```
-
-### Borrar carpetas
-
-```R
+# Borramos carpetas
 unlink("/home/ins_user/cursoR/AQUA", recursive = TRUE)
-dir.create("/home/ins_user/cursoR/data")
-dir.create("/home/ins_user/cursoR/results")
 # ver que carpetas tenemos 
 dir("/home/ins_user/cursoR/")
+```
+
+Ejercicio: Crea las carpetas data, scripts y  results 
+
+```R
+dir.create("/home/ins_user/cursoR/data")
+dir.create("/home/ins_user/cursoR/scripts")
+dir.create("/home/ins_user/cursoR/results")
 ```
 
 ### Creamos un objeto
@@ -114,17 +115,15 @@ b <- 4
 x <- "mouse"
 a
 ```
-### Usamos una función
+Crea un objeto con un nombre (de tu elección) que comience con un número. ¿Qué sucede?
+
+### Función, Argumentos y opciones
 
 ```R
-sqrt(16)        # devuelve la raíz cuadrada de 16
-```
-
-### Usamos una función y sus opciones
-
-```R
+# Función raíz cuadrada de 
+sqrt(16)       
+# Usamos una función y sus opciones
 round(3.141516) # Redondea a 0 decimales
-args(round)     # Muestra los argumentos de round()
 round(3.141516, digits = 5) # el resultado de tener 5 decimales
 ?round          # Explica como usar round
 ```
@@ -174,98 +173,66 @@ BiocManager::install("DESeq2")
 
 ## 4. IMPORTACIÓN/GUARDADO DE DATOS EN R----
 
-### Input dir
+### Input y Output dir
 
 ```R
+# Imput dir
 data_dir <-  "/home/ins_user/cursoR/data/"
-```
-
-### Output dir
-
-```R
+# Output dir
 results_dir <-  "/home/ins_user/cursoR/results/"
 ```
 
 ### ruta del archivo con ejemplo de guardado csv
 
 ```R
+# Trabajemos con la data iris
 datos_iris <- iris
-```
-
-### Forma corta
-
-```R
+# Forma corta
 write.csv(datos_iris, file = paste0(data_dir, "datos_iris.csv"))
-```
-
-### Forma larga
-
-```
+# Forma larga
 write.csv(datos_iris, file = "/home/ins_user/cursoR/data/datos_iris_2.csv")
 ```
 
-### Guardar un archivo csv
+### Guardar archivos, objetos y sesión  
 
 ```R
+# Guardar un archivo csv
 write.csv(datos_iris, file = paste0(data_dir, "datos_iris.csv"))
-```
-
-### Guardar un objeto
-
-```R
+# Guardar un objeto
 save(a, file = paste0(results_dir,"result_a.RData"))
-```
-
-### Guardar la sesión en R
-
-```R
-save.image(file <- paste0(results_dir, "Mi_sesion.RData" ))
-```
-
-### Obtener información de las versiones de los programas
-
-```R
+# Obtener información de las versiones de los programas
 sessionInfo()
-```
-
-### Guardar en formato de excel
-
-```R
+# Guardar la sesión en R
+save.image(file <- paste0(results_dir, "Mi_sesion.RData" ))
+# Guardar en formato de excel
 library(openxlsx)
 write.xlsx(datos_iris, "data/datos.xlsx")
 write.xlsx(datos_iris, "data/datos_table.xlsx", asTable = TRUE)
 ```
 
-### Cargar archivos tipo R.Data
-
+### Cargar archivos 
+Archivos R.Data
 ```R
+#  cargar archivos tipo R.Data
 load(file <-  paste0(results_dir, "result_a.RData"))
 load(file <-  paste0(results_dir, "Mi_sesion.RData"))
-```
 
-### Cargar archivos separados por un valor
-
+Archivos separados por un valor
 ```R
+# Cargar archivos separados por un valor
 read.table("data/datos_iris.csv", header = TRUE, sep = ",")
 read.table("data/Araport11_gene", header = TRUE, sep = "\t")
 read.csv(paste0(data_dir, "datos_iris_2.csv"))
 data_new <-  read.csv(paste0(data_dir, "datos_iris_2.csv"))
 ```
-
-### Importar datos desde Excel con código R
-
+Archivos excel
 ```R
+# Importar datos desde Excel con código R
 # cargar la librería readxl 
 install.packages("readxl")
 library(readxl)
-```
-
-```R
 # como mirar cuantas hojas tiene tu Excel
 excel_sheets("data/Concentracion_data.xlsx")
-```
-
-```R
 # Importar excel con código de R: caso 1
 caso_1 <- read_excel("data/Concentracion_data.xlsx")
 # Importar excel con codigo de R: caso 2
