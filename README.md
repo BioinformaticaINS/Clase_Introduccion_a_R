@@ -658,29 +658,19 @@ df[,c("genes", "condicion_exp")]
 ### Alternativamente podemos usar $
 El operador $ se puede utilizar para seleccionar, asignar nuevos valores o crear nuevas variables (columnas) en data.frames, así como elementos en listas.
 
-#### $ nos sirve para seleccionar = indexing
+#### 
 
 ```R
+$ nos sirve para seleccionar = indexing
 colnames(df)
 (df$expresion)
-```
-#### $ nos sirve para asignar nuevos valores
-
-```R
+# $ nos sirve para asignar nuevos valores
 df$condicion_exp <- c(rep("T_1",4), rep("T_2",4))
 df
-```
-
-#### $ nos sirve para crear nuevas variables
-
-```R
+# $ nos sirve para crear nuevas variables
 df$numero_exones <- c(4, 6, 2, 4, 7, 3, 5, 6)
 df
-```
-
-#### asigna un mismo valor a toda una nueva columna
-
-```R
+# asigna un mismo valor a toda una nueva columna
 df$funcion_gen <- "metabolismo"
 df
 ```
