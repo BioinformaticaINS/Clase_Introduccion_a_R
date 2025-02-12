@@ -99,7 +99,7 @@ unlink("/home/ins_user/cursoR/AQUA", recursive = TRUE)
 dir("/home/ins_user/cursoR/")
 ```
 
-*Ejercicio*  Crea las carpetas data, scripts y  results 
+**Ejercicio**  Crea las carpetas data, scripts y  results 
 
 ```R
 dir.create("/home/ins_user/cursoR/data")
@@ -115,7 +115,7 @@ b <- 4
 x <- "mouse"
 a
 ```
-Crea un objeto con un nombre (de tu elección) que comience con un número. ¿Qué sucede?
+**Ejercicio** Crea un objeto con un nombre (de tu elección) que comience con un número. ¿Qué sucede?
 
 ### Función, Argumentos y opciones
 
