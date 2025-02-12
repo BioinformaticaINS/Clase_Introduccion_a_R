@@ -219,7 +219,7 @@ data_dir <-  "/home/ins_user/cursoR/data/"
 results_dir <-  "/home/ins_user/cursoR/results/"
 ```
 
-### ruta del archivo con ejemplo de guardado csv
+### ruta del archivo con función paste0
 
 ```R
 # Trabajemos con la data iris
