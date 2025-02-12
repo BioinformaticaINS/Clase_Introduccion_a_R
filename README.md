@@ -169,9 +169,8 @@ say( what = "Hola soy michimichi", by = "cat")
 install.packages("pacman")
 pacman::p_load(cowsay, dplyr)
 ```
-
+### Instalación desde Bioconductor 
 ```R
-# Instalación desde Bioconductor 
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 
@@ -292,7 +291,7 @@ View(gene_YY1)
 
 ## 5. ESTRUCTURA DE DATOS ----
 
-### Tipos de datos ----
+### 5.1 Tipos de datos ----
 
 #### Tipo numérico
 
@@ -324,8 +323,28 @@ p
 typeof(p)
 class(p)
 ```
+### 5.2 Clases de datos
+#### Factores
+```R
+sex <- c("Femenino", "Masculino", "Femenino", "Femenino")
+sex_f <- factor(c("Femenino", "Masculino", "Femenino", "Femenino"))
+# ver el tipo del dato
+typeof(sex_f)
+# ver la clase del objeto
+class(sex_f)
+# ver la estructura del objeto
+str(sex_f)
+sex_f
+# si queremos reordenar los niveles
+sex_f  <- factor(sex_f, levels = c("Masculino", "Femenino"))
+sex_f
+```
+### 5.3 Variables
+Tenemos variables continuas, discretas, categóricas y lógicas
 
-### 5.1. Vector ----
+### 5.4 Estructura de datos
+
+### 5.4.1 Vector ----
 
 #### vectores con c
 
@@ -363,23 +382,6 @@ Notas5 <- rep(c(1,3,5), each = 2)
 Notas5
 ```
 
-#### Tipo factor : factor especial
-
-```R
-sex <- c("Femenino", "Masculino", "Femenino", "Femenino")
-sex_f <- factor(c("Femenino", "Masculino", "Femenino", "Femenino"))
-# ver el tipo del dato
-typeof(sex_f)
-# ver la clase del objeto
-class(sex_f)
-# ver la estructura del objeto
-str(sex_f)
-sex_f
-# si queremos reordenar los niveles
-sex_f  <- factor(sex_f, levels = c("Masculino", "Femenino"))
-sex_f
-```
-
 #### Ver la lista de operadores y su significado
 
 ```R
@@ -391,7 +393,7 @@ y <- c(1:8)
 x %in% y
 ```
 
-## 5.2 Matrices ----
+## 5.4.2 Matrices ----
 
 ### matrix() crea matrices desde cero con datos, filas y columnas.
 
@@ -427,7 +429,7 @@ matrix5 <- t(matrix4)
 matrix5
 dim(matrix5)
 ```
-## 5.3 array ----
+## 5.4.3 array ----
 
 ```R
 mi_array <- array(data = 1:16, dim = c(2, 2, 2, 2))
@@ -435,7 +437,7 @@ mi_array
 dim(mi_array)
 ```
 
-## 5.4 Dataframes ----
+## 5.4.4 Dataframes ----
 
 ```R
 datos_iris <- iris
@@ -512,7 +514,7 @@ datos$funcion_gen <- rep(c("Metabolismo", "Señalización", "Apoptosis", "Inflam
 datos
 ```
 
-## 5.5 Tibble ----
+## Tibble ----
 
 ### Recordemos que estructura tiene la data iris
 
@@ -545,7 +547,7 @@ tibble_iris
 tibble(x = 1:5, y = 1, z = x^2 + y)
 ```
 
-## 5.6 Listas ----
+## 5.4.5 Listas ----
 
 ### Creamos una lista
 
@@ -597,7 +599,7 @@ cat("Las dimensiones son:", dim(df), "\n")
 cat("El número de columnas es:", ncol(df), "\n")
 ```
 
-### Indexación de objetos en R
+### 6.1 Indexación de objetos en R
 
 #### En vectores
 
@@ -840,7 +842,7 @@ complete.cases(concentracion)
 concentracion_cleaned <- concentracion[complete.cases(concentracion)]
 concentracion_cleaned
 ```
-
+### 6.2. Funciones de R base
 ### Condicionales (if, else)
 
 ```R
