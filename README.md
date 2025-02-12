@@ -99,7 +99,7 @@ unlink("/home/ins_user/cursoR/AQUA", recursive = TRUE)
 dir("/home/ins_user/cursoR/")
 ```
 
-Ejercicio: Crea las carpetas data, scripts y  results 
+*Ejercicio*  Crea las carpetas data, scripts y  results 
 
 ```R
 dir.create("/home/ins_user/cursoR/data")
