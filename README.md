@@ -624,6 +624,7 @@ v[v > 25]
 ```
 
 #### Indexación de matrices y dataframes
+Indexación de matrices y dataframes [filas , columnas ]
 
 ```R
 df <- data.frame(genes = paste0("Gen", c(1:8)), 
