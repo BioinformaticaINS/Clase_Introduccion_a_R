@@ -73,11 +73,6 @@ De esa forma la instalación del Rstudio estará completa. Podemos hacer la bús
 
 ## 1. INTRODUCCION A R /2. INSTALACION ----
 
-```R
-getwd()
-setwd("D:/cursoR/")
-```
-
 ### En mi primer script realizare la suma de dos numeros
 
 ```R
@@ -92,23 +87,23 @@ getwd()
 ### Establecemos el directorio de trabajo
 
 ```R
-setwd("D:/cursoR")
+setwd("/home/ins_user/cursoR")
 ```
 
 ### Crear carpetas
 
 ```R
-dir.create("D:/cursoR/AQUA")
+dir.create("/home/ins_user/cursoR/AQUA")
 ```
 
 ### Borrar carpetas
 
 ```R
-unlink("D:/cursoR/AQUA", recursive = TRUE)
-dir.create("D:/cursoR/data")
-dir.create("D:/cursoR/results")
+unlink("/home/ins_user/cursoR/AQUA", recursive = TRUE)
+dir.create("/home/ins_user/cursoR/data")
+dir.create("/home/ins_user/cursoR/results")
 # ver que carpetas tenemos 
-dir("/cursoR/")
+dir("/home/ins_user/cursoR/")
 ```
 
 ### Creamos un objeto
@@ -143,9 +138,9 @@ round(3.141516, digits = 5) # el resultado de tener 5 decimales
 # Este script ejecuta xxx utilizando como input yyy y
 # genera un output zzz
 # Input dir
-data_dir <-  "D:/cursoR/data"
+data_dir <-  "/home/ins_user/cursoR/data"
 # Output dir
-results_dir = "D:/cursoR/results/"
+results_dir = "/home/ins_user/cursoR/results/"
 # cargar librerías
 library(datasets)
 # Cargar input
@@ -182,13 +177,13 @@ BiocManager::install("DESeq2")
 ### Input dir
 
 ```R
-data_dir <-  "/cursoR/data/"
+data_dir <-  "/home/ins_user/cursoR/data/"
 ```
 
 ### Output dir
 
 ```R
-results_dir <-  "/cursoR/results/"
+results_dir <-  "/home/ins_user/cursoR/results/"
 ```
 
 ### ruta del archivo con ejemplo de guardado csv
@@ -206,7 +201,7 @@ write.csv(datos_iris, file = paste0(data_dir, "datos_iris.csv"))
 ### Forma larga
 
 ```
-write.csv(datos_iris, file = "D:/courses_bioinfo/Curso INS/cursoR/data/datos_iris_2.csv")
+write.csv(datos_iris, file = "/home/ins_user/cursoR/data/datos_iris_2.csv")
 ```
 
 ### Guardar un archivo csv
