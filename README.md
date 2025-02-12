@@ -567,7 +567,7 @@ tibble(x = 1:5, y = 1, z = x^2 + y)
 ### Creamos una lista
 
 ```R
-mi_lista <- list(sex, matrix1, df)
+mi_lista <- list(sex_f, matrix1, df)
 mi_lista
 ```
 
