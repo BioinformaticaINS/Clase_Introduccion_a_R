@@ -125,8 +125,8 @@ a
 sqrt(16)       
 # Usamos una función y sus opciones
 round(3.141516) # Redondea a 0 decimales
-round(3.141516, digits = 5) # el resultado de tener 5 decimales
 ?round          # Explica como usar round
+round(3.141516, digits = 5) # el resultado de tener 5 decimales
 ```
 
 ### Crear un R Script organizado
