@@ -3,6 +3,74 @@
 - Instructora: Dámaris Esquén
 - Fecha: 12/02/2025
 
+## Preliminar: Instlación de RStudio
+
+### Descargar el instalador de Rstudio:
+
+```BASH
+cd Bioprograms
+wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.12.0-467-amd64.deb
+```
+
+### Instalar RStudio mediante archivo .deb
+
+```BASH
+sudo dpkg -i rstudio-2024.12.0-467-amd64.deb
+```
+
+Si ocurriera un problema como este:
+
+```
+dpkg: dependency problems prevent configuration of rstudio:
+ rstudio depends on libssl-dev; however:
+  Package libssl-dev is not installed.
+ rstudio depends on libclang-dev; however:
+  Package libclang-dev is not installed. <-------------------ESTA ES LA DEPENDENCIA QUE FALTA.
+
+dpkg: error processing package rstudio (--install):
+ dependency problems - leaving unconfigured
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for shared-mime-info (2.1-2) ...
+Errors were encountered while processing:
+ rstudio
+```
+
+Para lo cual tenemos que instalar la dependencia:
+
+```BASH
+sudo apt install libclang-dev
+```
+
+Y obtendremos:
+
+```
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+You might want to run 'apt --fix-broken install' to correct these.
+The following packages have unmet dependencies:
+ libclang-dev : Depends: libclang-14-dev (>= 14~) but it is not going to be installed
+ rstudio : Depends: libssl-dev but it is not going to be installed
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+```
+
+Para lo que tenemos que ejecutar:
+
+```BASH
+sudo apt --fix-broken install
+```
+
+Esperamos a que termine la instalación anterior para ejecutar nuevamente:
+
+```BASH
+sudo dpkg -i rstudio-2024.12.0-467-amd64.deb
+```
+
+De esa forma la instalación del Rstudio estará completa. Podemos hacer la búsqueda del aplicativo en los `puntos` en la parte inferior de barra de trabajo.
+
 ## 1. INTRODUCCION A R /2. INSTALACION ----
 
 ```R
