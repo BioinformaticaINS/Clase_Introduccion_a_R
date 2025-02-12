@@ -154,8 +154,11 @@ datos_iris = iris
 ```R
 # Desde source
 install.packages("cowsay")
+# Llamado del paquete
 library(cowsay)
 say( what = "Hola soy michimichi", by = "cat")
+# desvincular paquetes
+detach("package:dplyr", unload = TRUE) #unload = TRUE, además de desvincular el paquete, se eliminarán todas sus funciones de la memoria.
 ```
 **Ejercicio** Que argumentos y opciones tiene la funcion say del paquete cowsay
 
