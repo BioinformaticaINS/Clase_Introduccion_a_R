@@ -1,6 +1,6 @@
 # Clase Introducción a R"
 
-- author: Damaris Esquen
+- Instructora: Dámaris Esquén
 - Fecha: 12/02/2025
 
 ## 1. INTRODUCCION A R /2. INSTALACION ----
