@@ -661,7 +661,7 @@ El operador $ se puede utilizar para seleccionar, asignar nuevos valores o crear
 #### 
 
 ```R
-$ nos sirve para seleccionar = indexing
+# $ nos sirve para seleccionar = indexing
 colnames(df)
 (df$expresion)
 # $ nos sirve para asignar nuevos valores
