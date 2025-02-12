@@ -718,53 +718,21 @@ str(mi_lista)
 ```R
 test <- seq(from = 1, to = 9, by = 2)
 test
-```
-
-#### evaluo valores mayores que 3 en el vector test
-
-```R
+# evaluo valores mayores que 3 en el vector test
 test > 3
-```
-
-#### evaluo valores menores iguales que 5 en el vector test
-
-```R
+# evaluo valores menores iguales que 5 en el vector test
 test <= 5
-```
-
-#### evaluo valores exactamente iguales a 7
-
-```R
+# evaluo valores exactamente iguales a 7
 test == 7
-```
-
-#### evaluo valores no iguales a 9
-
-```R
+# evaluo valores no iguales a 9
 test != 9
-```
-
-#### evaluo x O y utilizando pipe |
-
-```R
+# evaluo x O y utilizando pipe |
 test[test < 3 | test > 5]
-```
-
-#### evaluo x Y y utilizando &
-
-```R
+# evaluo x Y y utilizando &
 test[test >= 3 & test < 5]
-```
-
-#### evaluo x %in% y (match) 
-
-```R
+# evaluo x %in% y (match) 
 test[test %in% c(3,5)]
-```
-
-#### Se pueden evaluar numeros y tambien caracteres 
-
-```R
+# Se pueden evaluar numeros y tambien caracteres 
 frutas <- c("uva", "manzana", "fresa", "sandía")
 frutas
 frutas[frutas == "fresa"]
@@ -831,7 +799,7 @@ concentracion[!is.na(concentracion)]
 # Opción B
 # Elimina NA y guarda la posición de los valores eliminados
 na.omit(concentracion)
-#Opción C:
+# Opción C:
 # genera un vector lógico (TRUE para valores completos y FALSE para los NA).
 complete.cases(concentracion)
 # Filtra los valores completos directamente
