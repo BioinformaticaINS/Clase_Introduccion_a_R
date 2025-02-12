@@ -298,13 +298,15 @@ gene_YY1
 View(gene_YY1)
 ```
 
-## 5. ESTRUCTURA DE DATOS ----
+## 5. ESTRUCTURA DE DATOS 
+Define qué tipo de valores existen en R
 
 ### 5.1 Tipos de datos ----
 
 #### Tipo numérico
 
 ```R
+# Tipo numerico
 x <- 1.1
 x
 typeof(x)
@@ -319,6 +321,7 @@ typeof(y)
 #### Tipo caracter
 
 ```R
+# Tipo caracter
 z <- "Estas mejorando en esto"
 z
 typeof(z)
@@ -327,25 +330,30 @@ typeof(z)
 #### Tipo Logico
 
 ```R
+# Tipo lógico
 p <- TRUE
 p
 typeof(p)
-class(p)
 ```
 ### 5.2 Clases de datos
+Define cómo R Interpreta el Valor
+
+```R
+class(x)
+class(y)
+class(z)
+class(p)
+```
+
 #### Factores
 ```R
-sex <- c("Femenino", "Masculino", "Femenino", "Femenino")
 sex_f <- factor(c("Femenino", "Masculino", "Femenino", "Femenino"))
-# ver el tipo del dato
+# ver el tipo 
 typeof(sex_f)
-# ver la clase del objeto
+# ver la clase
 class(sex_f)
-# ver la estructura del objeto
+# ver la estructura
 str(sex_f)
-sex_f
-# si queremos reordenar los niveles
-sex_f  <- factor(sex_f, levels = c("Masculino", "Femenino"))
 sex_f
 ```
 ### 5.3 Variables
