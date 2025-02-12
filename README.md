@@ -818,9 +818,9 @@ head(df_mod)
 # Visualizar los primeros 3 datos de la columna 1 manteniendo la estructura de dataframe   
 df_mod[1:3,1, drop = FALSE] # drop=FALSE nos muestra en formato dataframe
 ```
+### Datos faltantes ----
 
 ```R
-# Datos faltantes ----
 concentracion <- c(43, 47, NA, 48, 53, NA)
 concentracion
 # verificar si hay NA en el vector
@@ -842,7 +842,6 @@ complete.cases(concentracion)
 concentracion_cleaned <- concentracion[complete.cases(concentracion)]
 concentracion_cleaned
 ```
-### 6.2. Funciones de R base
 ### Condicionales (if, else)
 
 ```R
@@ -882,7 +881,7 @@ for (i in 1:length(temperatura)) {
 }
 ```
 
-### Funciones de Rbase
+### 6.2 Funciones de Rbase
 
 ```R
 df_mod
