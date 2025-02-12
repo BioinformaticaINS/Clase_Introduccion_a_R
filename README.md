@@ -445,6 +445,7 @@ matrix4
 ```R
 matrix5 <- t(matrix4)
 matrix5
+dim(matrix4)
 dim(matrix5)
 ```
 ## 5.4.4 array ----
