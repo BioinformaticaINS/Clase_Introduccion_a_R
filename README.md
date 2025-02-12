@@ -169,9 +169,10 @@ detach("package:dplyr", unload = TRUE) #unload = TRUE, además de desvincular el
 ```
 ### Instalación desde Bioconductor 
 ```R
+# Instalamos el administrador de Bioconductor: BiocManager
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
-
+# Instalamos DESesq2
 BiocManager::install("DESeq2")
 ```
 
