@@ -110,6 +110,7 @@ dir.create("/home/ins_user/cursoR/results")
 ### Creamos un objeto
 
 ```R
+# Creamos los objetos a, b, x
 a = 2
 b <- 4
 x <- "mouse"
