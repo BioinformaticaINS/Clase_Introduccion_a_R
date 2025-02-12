@@ -18,7 +18,7 @@ wget https://download1.rstudio.org/electron/jammy/amd64/rstudio-2024.12.0-467-am
 sudo dpkg -i rstudio-2024.12.0-467-amd64.deb
 ```
 
-Si ocurriera un problema como este:
+Si ocurriera un problema como este: 
 
 ```
 dpkg: dependency problems prevent configuration of rstudio:
