@@ -655,17 +655,16 @@ df
 # asigna un mismo valor a toda una nueva columna
 df$funcion_gen <- "metabolismo"
 df
-```
-
-#### guardamos el dataframe
-
-```R
+# cambiamos del nombre del dataframe
 df_mod <- df
+# guardamos el dataframe
+write.csv(df_mod, file = paste0(data_dir, "df_mod.csv"))
 ```
 
 #### index de una lista: sublistas
 
 ```R
+# indexing con [[]]
 mi_lista[1] # sublista
 mi_lista[[1]]        # vector
 mi_lista[[1]][[1]]   # elementos del vector
@@ -673,29 +672,24 @@ mi_lista[[2]]        # matrix
 mi_lista[[2]][[1,3]] # en elemento de matrix
 mi_lista[[3]]        # dataframe
 mi_lista[[3]][[1,3]] # en elemento de dataframe
-```
 
-#### Podemos acceder a los elementos de la lista utilizando $
-
-```R
+# Podemos acceder a los elementos de la lista utilizando $
 mi_lista$vector
 mi_lista[["vector"]]
-```
 
-#### mi_lista[[c(sublista, elemento)]] 
-
-```
+# Podemos acceder con la funcion c(): mi_lista[[c(sublista, elemento)]] 
 mi_lista[[c(3,3)]]
-```
 
-#### Podemos asignar nombres a cada sublista
-
-```R
+# Podemos asignar nombres a cada sublista
+str(mi_lista)
 names(mi_lista) <- c("vector", "matrices", "dataframe")
 str(mi_lista)
 ```
 
-#### Pruebas de declaración utilizando operadores lógicos
+#### Pruebas de declaración
+Podemos usar operadores de comparación para obtener valores TRUE o FALSE.
+Podemos hacer subsetting en función de condiciones usando operadores lógicos
+
 
 ```R
 test <- seq(from = 1, to = 9, by = 2)
@@ -763,6 +757,8 @@ df_mod <- df_mod[,-1]
 head(df_mod)
 # Visualizar los primeros 3 datos de la columna 1 manteniendo la estructura de dataframe   
 df_mod[1:3,1, drop = FALSE] # drop=FALSE nos muestra en formato dataframe
+# Guardamos df_mod
+write.csv(df_mod, file = paste0(data_dir, "df_mod.csv"))
 ```
 ### Datos faltantes ----
 
