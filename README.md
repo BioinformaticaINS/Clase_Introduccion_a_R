@@ -570,6 +570,12 @@ class(mi_lista)
 ### Recordemos como obtenemos información de una estructura de datos
 
 ```R
+Creamos nuestro dataframe df
+df <- data.frame(genes = paste0("Gen", c(1:8)), 
+                 expresion = c(5.8, 5.5, 6.3, 6.1, 7.8, rep(8,3)), 
+                 condicion_exp = c(rep("Control", 4), rep("Tratramiento",4)))
+df
+
 dim(df) 	# dimensiones [fila, columna] 
 length(df) 	# largo, número de columnas 
 row.names(df)	# nombre de las filas
@@ -582,11 +588,8 @@ head(df)	# muestra las 6 primeras filas
 head(df, 2)	# se puede seleccionar numero de filas en n
 tail(df)	# muestra las 6 ultimas filas
 View(df) 	# Mostrar objetos en una ventana separada dentro de RStudio
-```
 
-### Se puede adornar la salida colocando notas
-
-```R
+# Se puede adornar la salida colocando notas
 cat("Las dimensiones son:", dim(df), "\n")
 cat("El número de columnas es:", ncol(df), "\n")
 ```
@@ -620,13 +623,6 @@ Puedes seleccionar usando numero de fila o columna
 
 Puedes seleccionar usando nombre de la fila o columna, incluyendo o no varias columnas
 	nombre_del_data_frame[nombre_de_fila, nombre_de_columna] 
-
-
-```R
-df <- data.frame(genes = paste0("Gen", c(1:8)), 
-                 expresion = c(5.8, 5.5, 6.3, 6.1, 7.8, rep(8,3)), 
-                 condicion_exp = c(rep("Control", 4), rep("Tratramiento",4)))
-```
 
 ```R
 df
