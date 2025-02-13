@@ -722,7 +722,7 @@ frutas[frutas == "fresa"]
 
 ```
 
-#### Podemos evaluar si los valores dentro de un vector son numericos o caracteres
+#### Podemos evaluar si los valores dentro de un vector son numericos o caracteres o que estructura es.
 
 ```R
 # usando la funcion is.clase() consulto la clase cierto objeto y obtengo resultados TRUE o FALSE
@@ -730,17 +730,11 @@ is.numeric(frutas)
 is.numeric(test)
 is.character(frutas)
 is.character(test)
-```
-
-#### Podemos evaluar si es vector u otro estructura
-
-```R
+# Podemos evaluar si es vector u otro estructura
 is.vector(frutas)
 is.list(frutas)
-# La diferencia entre:
-frutas == "uva"		# comparamos cada elemento de frutas con el valor "uva", devuelve un vector lógico
-frutas[frutas == "uva"]
 ```
+**ejercicios**
 
 ```R
 # Ejercicio 1
