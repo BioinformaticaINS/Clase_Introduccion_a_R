@@ -671,20 +671,20 @@ mi_lista[1] # sublista
 mi_lista[[1]]        # vector
 mi_lista[[1]][[1]]   # elementos del vector
 mi_lista[[2]]        # matrix
-mi_lista[[2]][[1,3]] # en elemento de matrix
+mi_lista[[2]][[1,2]] # en elemento de matrix
 mi_lista[[3]]        # dataframe
 mi_lista[[3]][[1,3]] # en elemento de dataframe
 
 # Podemos acceder a los elementos de la lista utilizando $
-mi_lista$vector
-mi_lista[["vector"]]
+mi_lista$sex_f
+mi_lista[["sex_f"]]
 
 # Podemos acceder con la funcion c(): mi_lista[[c(sublista, elemento)]] 
-mi_lista[[c(3,3)]]
+mi_lista[[c(2,3)]]
 
 # Podemos asignar nombres a cada sublista
 str(mi_lista)
-names(mi_lista) <- c("vector", "matrices", "dataframe")
+names(mi_lista) <- c("vector", "matriz", "dataframe")
 str(mi_lista)
 ```
 
@@ -694,6 +694,7 @@ Podemos hacer subsetting en función de condiciones usando operadores lógicos
 
 
 ```R
+# Creamos el vector test
 test <- seq(from = 1, to = 9, by = 2)
 test
 # evaluo valores mayores que 3 en el vector test
@@ -704,6 +705,8 @@ test <= 5
 test == 7
 # evaluo valores no iguales a 9
 test != 9
+
+# Puedo usar indexing para extraer elementos de un vector que cumplen ciertas condiciones lógicas
 # evaluo x O y utilizando pipe |
 test[test < 3 | test > 5]
 # evaluo x Y y utilizando &
@@ -714,11 +717,15 @@ test[test %in% c(3,5)]
 frutas <- c("uva", "manzana", "fresa", "sandía")
 frutas
 frutas[frutas == "fresa"]
+# frutas == "fresa" compara cada elemento de frutas con la cadena "fresa" y devuelve un vector lógico
+# frutas[frutas == "fresa"] usa este vector lógico para filtrar el elemento de frutas que es igual a "fresa", y devuelve el valor frutas en la pocisión donde se cumple.
+
 ```
 
 #### Podemos evaluar si los valores dentro de un vector son numericos o caracteres
 
 ```R
+# usando la funcion is.clase() consulto la clase cierto objeto y obtengo resultados TRUE o FALSE
 is.numeric(frutas)
 is.numeric(test)
 is.character(frutas)
@@ -730,8 +737,8 @@ is.character(test)
 ```R
 is.vector(frutas)
 is.list(frutas)
-# La diferencia entre 
-frutas == "uva"
+# La diferencia entre:
+frutas == "uva"		# comparamos cada elemento de frutas con el valor "uva", devuelve un vector lógico
 frutas[frutas == "uva"]
 ```
 
