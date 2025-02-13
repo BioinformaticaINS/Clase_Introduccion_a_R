@@ -605,6 +605,7 @@ Podemos indexar con condiciones
 	Nombre_del_vector[ nombre_del vector_y_condición]
 
 ```R
+# Creamos el vector v
 v <- c(10, 20, 30, 40, 50)
 # Para seleccionar un solo elemento
 v[2]
