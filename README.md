@@ -962,3 +962,11 @@ which(df_mod == 6.1, arr.ind = TRUE)
 # Opcion B
 df_mod[which(df_mod == 6.1),]
 ```
+
+## Instalar estos paquetes 
+pacman::p_load(dplyr, ggplot2, RColorBrewer, paletteer, cowplot)
+
+
+
+
+
