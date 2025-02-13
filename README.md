@@ -789,6 +789,11 @@ complete.cases(concentracion)
 # Filtra los valores completos directamente
 concentracion_cleaned <- concentracion[complete.cases(concentracion)]
 concentracion_cleaned
+# NULL es la ausencia total de datos 
+jovenes <- data.frame(nombre = c("Ana", "Juan", "Luis"), edad = c(25, NA, 30)) 
+jovenes
+jovenes$altura 
+
 ```
 ### Condicionales (if, else)
 
