@@ -522,7 +522,7 @@ df_iris
 str(iris)
 ```
 
-### Para manipular tibble necesitamos el paquete tidyverse
+### Para manipular tibble necesitamos el paquete tibble
 
 ```R
 install.packages("tibble")
@@ -540,6 +540,7 @@ tibble_iris
 
 # creamos un tibble
 tibble2 <- tibble(x = 1:5, y = 1, z = x^2 + y)
+tibble2
 ```
 
 ## 5.4.6 Listas ----
