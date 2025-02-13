@@ -456,7 +456,9 @@ Es una estructura de datos de **dos dimensiones** que puede almacenar vectores q
 ```R
 # carguemos nuestro dataframe iris
 datos_iris <- iris
-# Ver las primeras 6 filas del dataframe
+# Ver el objeto en una ventana separada
+View(datos_iris)
+# Ver las primeras 6 filas del dataframe dentro de R Studio
 head(datos_iris)
 # puedes especificar el numero de filas a mostrar
 head(datos_iris, 3)
@@ -567,7 +569,7 @@ class(mi_lista)
 ### Recordemos como obtenemos información de una estructura de datos
 
 ```R
-dim(df) 		# dimensiones [fila, columna] 
+dim(df) 	# dimensiones [fila, columna] 
 length(df) 	# largo, número de columnas 
 row.names(df)	# nombre de las filas
 colnames(df)	# nombre de las columnas
@@ -578,6 +580,7 @@ str(df)	        # Estructura
 head(df)	# muestra las 6 primeras filas
 head(df, 2)	# se puede seleccionar numero de filas en n
 tail(df)	# muestra las 6 ultimas filas
+View(df) 	# Mostrar objetos en una ventana separada dentro de RStudio
 ```
 
 ### Se puede adornar la salida colocando notas
