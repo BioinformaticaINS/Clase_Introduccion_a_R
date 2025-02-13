@@ -1,4 +1,4 @@
-# Clase Introducción a R"
+# Clase Introducción a R
 
 - Instructora: Dámaris Esquén
 - Fecha: 12/02/2025
