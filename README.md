@@ -449,15 +449,13 @@ dim(mi_array2)
 En estos ejemplos hemos creado arrays de cuatro dimensiones
 
 ## 5.4.5 Dataframes ----
-Un dataframe es una estrucutura 
-```R
-datos_iris <- iris
-```
-
-### Analicemos el dataframe iris
 Es una estructura de datos de **dos dimensiones** que puede almacenar vectores que pueden ser de diferente tipo: **heterogénea**
 
+### Analicemos el dataframe iris
+
 ```R
+# carguemos nuestro dataframe iris
+datos_iris <- iris
 # Ver las primeras 6 filas del dataframe
 head(datos_iris)
 # puedes especificar el numero de filas a mostrar
