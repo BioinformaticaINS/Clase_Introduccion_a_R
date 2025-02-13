@@ -655,13 +655,16 @@ df$funcion_gen <- "metabolismo"
 df
 # cambiamos del nombre del dataframe
 df_mod <- df
-# guardamos el dataframe
-write.csv(df_mod, file = paste0(data_dir, "df_mod.csv"))
 ```
 
 #### index de una lista: sublistas
 
 ```R
+# Creo una lista
+mi_lista <- list(sex_f = c("M", "F", "M", "F"), 
+                 matrix1 = matrix(1:4, nrow = 2, ncol = 2), 
+                 df = df)
+mi_lista
 # indexing con [[]]
 mi_lista[1] # sublista
 mi_lista[[1]]        # vector
