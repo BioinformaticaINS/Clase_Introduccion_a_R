@@ -934,22 +934,31 @@ summary(df_mod$funcion_gen)
 
 #### duplicated() Verificar si hay elementos duplicados en un vector o dataframe.
 
+Sintaxis: duplicated(x)
 ```R
+# Identifica elementos duplicados en un vector, lista o dataframe. Devuelve un vector LÓGICO 
 duplicated(df_mod$expresion)
+# Pero podemos extraer la información haciendo indexing
 df_mod[duplicated(df_mod$expresion), ]
 ```
 
 #### which(): Devuelve los índices de las posiciones donde una condición lógica es verdadera
 
+Sintaxis: which(x, arr.ind = FALSE)
 ```R
+# x es un vector lógico o una condición que evaluará si cada elemento cumple con la condición.
 which(df_mod$expresion < 7)
-which(honor)
+# arr.ind devuelve una matriz con las posiciones por fila y columna
+which(df == "Gen4", , arr.ind = TRUE) 
+# las funciones which.max y which.min permiten obtener el maximo y minimo valor de un vector
 which.max(df_mod$expresion) 
 ```
 
-#### Ejercicio 3
+**Ejercicio** ¿Que gen contiene una expresión de 6.1? 
 
 ```R
+# Opcion A
 which(df_mod == 6.1, arr.ind = TRUE)
+# Opcion B
 df_mod[which(df_mod == 6.1),]
 ```
