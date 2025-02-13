@@ -1,4 +1,4 @@
-# Clase Introducción a R"
+![image](https://github.com/user-attachments/assets/63bb23d6-c33d-46c7-85ee-52fab26a8148)![image](https://github.com/user-attachments/assets/4f8674b0-f7b0-4a54-851e-32c8a9401243)# Clase Introducción a R"
 
 - Instructora: Dámaris Esquén
 - Fecha: 12/02/2025
@@ -837,63 +837,98 @@ for (i in 1:length(temperatura)) {
 ### 6.2 Funciones de Rbase
 
 ```R
+# Aprendamos funciones con el dataframe df_mod
 df_mod
 ```
 
 #### length(): Devuelve el número total de elementos en un vector o lista.
 
+Sintaxis: length(x)
 ```R
+# length(): número total de elementos 
+# si colocamos el dataframe nos da el numero de columnas
+length(df_mod)
+# si indicamos la columna nos devuelve el numero de elementos en la columna
 length(df_mod$condicion_exp)
-length(df_mod) # si colocamos el dataframe nos da el numero de columnas
 ```
 
 #### unique() : Devuelve los valores únicos de un vector o columna.
 
+Sintaxis: unique(x)
 ```R
+# unique() : valores únicos 
 unique(df_mod$condicion_exp)
 ```
 
 #### sort() : Ordena los valores de un vector en orden ascendente (por defecto) o descendente.
+Sintaxis: sort(x, decreasing = TRUE, na.last = TRUE)
 
 ```R
+# sort() : Ordena y muestra elementos ordenados
 sort(df_mod$numero_exones)
+# decreasing = TRUE ordena en forma descendente y na.last = TRUE coloca NA al final
 sort(df_mod$numero_exones, decreasing = TRUE)
 ```
 
 #### order() : Ordenar un dataframe por una columna específica.
 
+Sintaxis: order(x, decreasing = FALSE)
 ```R
+# order() : Ordena y muestra indices de posición de elementos ordenados
 order(df_mod$numero_exones)
+# Podemos indexar estos elementos, es bastante util en dataframes
 df_mod[order(df_mod$numero_exones),]
 ```
 
 #### table() : Crear una tabla de frecuencias de un vector.
 
+Sintaxis: table(x, exclude = NULL, useNA = c("no", "ifany", "always"))
 ```R
+# table() : genera tabla de frecuencias
 table(df_mod$numero_exones)
-table(concentracion, useNA = "ifany") #
+# exclude especifica los valores que no deseas contar en la tabla
+table(df_mod$numero_exones, exclude = 2)
+# El argumento useNA,  "no" (No se incluirán NA), "ifany" (se incluirán NA solo si existen en el vector)
+# y "always" (Siempre incluir los valores NA, aunque no haya ninguno)
+table(concentracion, useNA = "ifany")
+table(df_mod$numero_exones, useNA = "always")
 ```
 
-#### subset() Filtrar un dataframe según una condición lógica y seleccionar columnas.
+#### subset() seleccionamos una parte de un conjunto de datos (segun condiciones lógicas) o seleccionamos columnas especificas.
 
+Sintaxis: subset(x, subset, select, drop = FALSE, ...)
 ```R
+# con el argumento subset selecciona un dataframe según una condición lógica
 subset(df_mod, subset = expresion < 6)
+# con el argumento select selecciono columnas especificas
 subset(df_mod, select = c(expresion, numero_exones))
+# Puedo usar ambos argumentos
 subset(df_mod, subset = expresion < 6, select = c(expresion, numero_exones))
+# Puedo eliminar columnas si le coloco - adelante de la columna a eliminar
 subset(df_mod, select = -numero_exones)
 ```
 
 #### sample() : Muestra aleatoria de un vector.
 
+Sintaxis: sample(x, size, replace = FALSE, prob=NULL)
 ```R
-sample(df_mod$expresion, 2, replace = FALSE, prob = c(0.6, 0.4))
+# size es el número de elementos que deseas seleccionar de x.
+sample(df_mod$expresion, 2)
+# replace define si los elementos seleccionados pueden repetirse
+sample(df_mod$expresion, 15, replace = TRUE)
+# prob un vector opcional de pesos de probabilidad para obtener los elementos de x.
+sample(df_mod$expresion, 2, replace = FALSE, prob = rep(0.125,8))
 ```
 
 #### summary() : Resumen estadístico de un vector o dataframe.
 
+Sintaxis: summary(x)
 ```R
+# Para vectores numéricos: Muestra el mínimo, primer cuartil, mediana, media, tercer cuartil y máximo.
 summary(df_mod$expresion)
+# Para factor muestra frecuencias absolutas para cada categoría 
 summary(df_mod$condicion_exp)
+# Para dataframes: Muestra un resumen para cada columna según su tipo (numérica o categórica).
 summary(df_mod$funcion_gen)
 ```
 
