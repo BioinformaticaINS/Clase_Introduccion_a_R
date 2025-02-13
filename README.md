@@ -761,7 +761,7 @@ head(df_mod)
 # Visualizar los primeros 3 datos de la columna 1 manteniendo la estructura de dataframe   
 df_mod[1:3,1, drop = FALSE] # drop=FALSE nos muestra en formato dataframe
 # Guardamos df_mod
-write.csv(df_mod, file = paste0(data_dir, "df_mod.csv"))
+write.csv(df_mod, file = "/home/ins_user/cursoR/results/df_mod.csv")
 ```
 ### Datos faltantes ----
 
