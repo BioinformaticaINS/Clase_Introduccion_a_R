@@ -735,6 +735,7 @@ is.vector(frutas)
 is.list(frutas)
 ```
 **ejercicios**
+E. 1. Crea un dataframe llamado test2, donde la primera columna sea el vector test, la segunda columna llamada multip, sea la multiplicación de los valores de test por 5. Finalmente evalúa si los valores obtenidos de multip son mayores de 30
 
 ```R
 # Ejercicio 1
@@ -743,6 +744,7 @@ test2 <- data.frame(test,
 test2
 test2[, 2] > 30
 ```
+E.2. Convierte la columna tratamiento  a factor. Renombra las filas con los nombres de los genes y elimina la columna 1. Visualizar los primeros 3 datos de la columna 1 manteniendo la estructura de dataframe. Guarda el dataframe en un archivo csv.
 
 ```R
 # Ejercio 2
@@ -760,6 +762,7 @@ df_mod <- df_mod[,-1]
 head(df_mod)
 # Visualizar los primeros 3 datos de la columna 1 manteniendo la estructura de dataframe   
 df_mod[1:3,1, drop = FALSE] # drop=FALSE nos muestra en formato dataframe
+
 # Guardamos df_mod
 write.csv(df_mod, file = "/home/ins_user/cursoR/results/df_mod.csv")
 ```
