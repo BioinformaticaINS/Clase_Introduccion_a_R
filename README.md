@@ -303,7 +303,10 @@ Define qué tipo de valores existen en R
 
 ### 5.1 Tipos de datos ----
 
-#### Tipo numérico
+Los tipos de datos principales son
+	a) numérico (numeric) que incluye **double** e **integer**
+ 	b) caracter (character)
+  	c) lógicos (logical)
 
 ```R
 # Tipo numerico
@@ -316,20 +319,12 @@ typeof(y)
 y <- 3L
 y
 typeof(y)
-```
 
-#### Tipo caracter
-
-```R
 # Tipo caracter
 z <- "Estas mejorando en esto"
 z
 typeof(z)
-```
 
-#### Tipo Logico
-
-```R
 # Tipo lógico
 p <- TRUE
 p
@@ -371,37 +366,31 @@ p
 ```
 
 ### 5.4.2. Vector 
+Un vector es simplemente una combinación de varios escalares del mismo tipo almacenados como un único objeto.
+Veamos como crear vectores
 
-#### vectores con c
+#### Crear vectores
 
 ```R
+# Crear vectores con la funcion c()
 edad <- c(16, 18, 24, 29) # vector numerico
 edad
 alumnos <- c("Ines", "Ana", "Luis", "Teresa") # vector con caracteres
 alumnos
 honor <- c(FALSE, TRUE, FALSE, FALSE) # vector lógico
 honor
-```
 
-#### vectores con a:b
-
-```R
+# Crear vectores con a:b
 Notas1 <- 16:20
 Notas1
-```
 
-#### Vectores con seq(from, to, by y/o length.out)
-
-```R
+# Vectores con seq(from, to, by y/o length.out)
 Notas2 <- seq(11, 20, by = 3)
 Notas2
 Notas3 <- seq(11, 20, length.out = 3)
 Notas3
-```
 
-#### vectores con rep(x, times, each, length.out)
-
-```R
+# vectores con rep(x, times, each, length.out)
 Notas4 <- rep(x = 1:2, times = 3, each = 4)
 Notas4
 Notas5 <- rep(c(1,3,5), each = 2)
@@ -420,19 +409,16 @@ x %in% y
 ```
 
 ## 5.4.3 Matrices ----
+Las matrices no son más que un conjunto de vectores del mismo tipo apilados, las matrices tienen **dos dimensiones**: filas y columnas
 
-### matrix() crea matrices desde cero con datos, filas y columnas.
+### Creamos matrices
 
 ```R
-# Creamos matrices con la función matrix( data, nrow, ncol)
+# Crear matrices con la función matrix( data, nrow, ncol)
 matrix1 <- matrix(data = 1:10, nrow = 2, ncol = 5)
 matrix2 <- matrix(data = 1:10, nrow = 5, ncol = 2)
-```
 
-### Crear matrices con rbind() y cbind()
-
-```R
-# Creamos matrices a partir de vectores con rbind() y cbind()
+# Crear matrices a partir de vectores con rbind() y cbind()
 nickname <- c("pud", "gab", "Lu")
 animal <- c("perro", "raton", "gato")
 # rbind() combina vectores como filas.
@@ -440,11 +426,7 @@ matrix3 <- rbind(nickname, animal)
 # cbind() combina vectores como columnas.
 matrix4 <- cbind(nickname, animal)
 matrix4
-```
 
-### tansponer matrix
-
-```R
 # Transponemos matrices con la funcion t()
 matrix5 <- t(matrix4)
 matrix5
@@ -452,21 +434,28 @@ dim(matrix4)
 dim(matrix5)
 ```
 ## 5.4.4 array ----
+Un array es una estructura que puede contener vectores, matrices, todos del mismo tipo en un **número arbitrario de dimensiones**
+
 Creo un array con la función array(data, dim)
 ```R
 mi_array <- array(data = 1:16, dim = c(2, 2, 2, 2))
 mi_array
 dim(mi_array)
+mi_array2 <- array(c(1, 2, 3, 4, 5,6), dim = c(3, 1, 2,2))  # Es un array de 3,1,2,2
+mi_array2
+dim(mi_array2)
+
 ```
-En este ejemplo crearemos un array de cuatro dimensiones
+En estos ejemplos hemos creado arrays de cuatro dimensiones
 
 ## 5.4.5 Dataframes ----
-
+Un dataframe es una estrucutura 
 ```R
 datos_iris <- iris
 ```
 
 ### Analicemos el dataframe iris
+Es una estructura de datos de **dos dimensiones** que puede almacenar vectores que pueden ser de diferente tipo: **heterogénea**
 
 ```R
 # Ver las primeras 6 filas del dataframe
@@ -478,19 +467,16 @@ str(datos_iris)
 ```
 
 ### Crear un dataframe
-
-#### Mismo tipo de datos
+Pueden ser del mismo tipo o diferente tipo de datos, creamos con la función data.frame()
 
 ```R
+# Mismo tipo de datos
 df_num <- data.frame(a = 1:3, b = 4:6) 
 row.names(df_num)
 colnames(df_num)
 str(df_num)
-```
 
-#### Diferentes tipos de datos
-
-```R
+# Diferentes tipos de datos
 df <- data.frame(genes = paste0("Gen", c(1:8)), 
                  expresion = c(5.8, 5.5, 6.3, 6.1, 7.8, rep(8,3)), 
                  condicion_exp = c(rep("Control", 4), rep("Tratramiento",4)))
@@ -509,20 +495,19 @@ ncol(df)
 
 ### Agregar información de edad al df
 
-#### Opción A
+#### Dos opciones
 
 ```R
-# declarar un vector
+#  Opción A
+# Declarar un vector
 log2FoldChange <- c(rep("0.000",4), 0.396, 0.433, 0.433, 0.433)
 log2FoldChange
 # agregarlo al df
 datos <- data.frame(df, log2FoldChange)
 datos
-```
 
-#### Opción B
-
-```R
+# Opción B
+# Con el símbolo $
 datos$funcion_gen <- rep(c("Metabolismo", "Señalización", "Apoptosis", "Inflamación"), 2)
 datos
 ```
@@ -546,23 +531,20 @@ library(tibble)
 ```
 
 ### Obtener un tibble
-
-#### Opción A
+Podemos coercionar con la función as_tibble() o crear con la función tibble()
 
 ```R
 # Obtenemos un tibble mediante coerción
 tibble_iris <- as_tibble(iris)
 tibble_iris
-```
 
-#### Opción B 
-
-```R
 # creamos un tibble
-tibble(x = 1:5, y = 1, z = x^2 + y)
+tibble2 <- tibble(x = 1:5, y = 1, z = x^2 + y)
 ```
 
 ## 5.4.6 Listas ----
+Son estructuras de datos que pueden almacenar, vectores, arrays, dataframes: **heterogéneas**, 
+pero son **unidimensionales** ya que los elementos se almacenan de forma ordenada y no tiene filas ni columnas
 
 ### Creamos una lista
 
@@ -591,13 +573,13 @@ dim(df) 		# dimensiones [fila, columna]
 length(df) 	# largo, número de columnas 
 row.names(df)	# nombre de las filas
 colnames(df)	# nombre de las columnas
-ncol(df)	 	# número de columnas
+ncol(df)	# número de columnas
 nrow(df) 	# número de filas 
 names(df)	# nombre de las columnas 
-str(df)		 # Estructura
+str(df)	        # Estructura
 head(df)	# muestra las 6 primeras filas
 head(df, 2)	# se puede seleccionar numero de filas en n
-tail(df)		# muestra las 6 ultimas filas
+tail(df)	# muestra las 6 ultimas filas
 ```
 
 ### Se puede adornar la salida colocando notas
@@ -635,7 +617,7 @@ Puedes seleccionar usando numero de fila o columna
 	nombre_del_data_frame[número_de_fila, número_de_columna] 
 
 Puedes seleccionar usando nombre de la fila o columna, incluyendo o no varias columnas
-	nombre_del_data_frame[número_de_fila, nombre_de_columna] 
+	nombre_del_data_frame[nombre_de_fila, nombre_de_columna] 
 
 
 ```R
