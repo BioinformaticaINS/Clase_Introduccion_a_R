@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/63bb23d6-c33d-46c7-85ee-52fab26a8148)![image](https://github.com/user-attachments/assets/4f8674b0-f7b0-4a54-851e-32c8a9401243)# Clase Introducción a R"
+# Clase Introducción a R"
 
 - Instructora: Dámaris Esquén
 - Fecha: 12/02/2025
