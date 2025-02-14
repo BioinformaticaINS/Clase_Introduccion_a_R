@@ -340,7 +340,7 @@ class(z)
 class(p)
 ```
 
-#### Factores
+#### 5.2.1 Factores
 ```R
 sex_f <- factor(c("Femenino", "Masculino", "Femenino", "Femenino"))
 # ver el tipo 
@@ -441,8 +441,7 @@ Creo un array con la función array(data, dim)
 ## 5.4.5 Dataframes ----
 Es una estructura de datos de **dos dimensiones** que puede almacenar vectores que pueden ser de diferente tipo: **heterogénea**
 
-### Analicemos el dataframe iris
-
+Analicemos el dataframe iris
 ```R
 # carguemos nuestro dataframe iris
 datos_iris <- iris
@@ -454,6 +453,10 @@ head(datos_iris)
 head(datos_iris, 3)
 # ver la estructura del dataframe
 str(datos_iris)
+colnames(datos_iris)
+row.names(datos_iris)
+nrow(datos_iris)
+ncol(datos_iris)
 ```
 
 ### Crear un dataframe
@@ -473,19 +476,19 @@ df <- data.frame(genes = paste0("Gen", c(1:8)),
 df
 ```
 
-### Conozco mi estructura de datos
+**Ejercicio** cual es el nombre de las filas y columnas de df, y cuantas filas tiene
 
 ```R
-colnames(df)
+# Puedes usar
 row.names(df)
+colnames(df)
 str(df)
 nrow(df)
-ncol(df)
 ```
 
 ### Agregar información de edad al df
 
-#### Dos opciones
+con las siguientes opciones:
 
 ```R
 #  Opción A
@@ -509,7 +512,6 @@ datos
 ```R
 df_iris <- iris
 df_iris
-str(iris)
 ```
 
 ### Para manipular tibble necesitamos el paquete tibble
@@ -517,13 +519,8 @@ str(iris)
 ```R
 install.packages("tibble")
 library(tibble)
-
-```
-
-### Obtener un tibble
+# Obtener un tibble
 Podemos coercionar con la función as_tibble() o crear con la función tibble()
-
-```R
 # Obtenemos un tibble mediante coerción
 tibble_iris <- as_tibble(iris)
 tibble_iris
@@ -577,8 +574,9 @@ View(df) 	# Mostrar objetos en una ventana separada dentro de RStudio
 ```
 
 ### 6.1 Indexación de objetos en R
+Acceder o filtrar los datos según ciertos criterios.
 
-#### En vectores
+#### 6.1.1 Indexación en vectores
 Para indexar un elemento dentro de un vector usando [ ], necesitamos escribir el número de posición del elemento dentro de los corchetes [ ]
 
 ```R
@@ -594,15 +592,11 @@ v[-2]
 v[v > 25]
 ```
 
-#### Indexación de matrices y dataframes
-Para indexar un data.frame, debes especificar la posición de los valores dentro de sus dos dimensiones (filas y columnas), de la siguiente manera:
-Puedes seleccionar usando numero de fila o columna
-	nombre_del_data_frame[número_de_fila, número_de_columna] 
-
-Puedes seleccionar usando nombre de la fila o columna, incluyendo o no varias columnas
-	nombre_del_data_frame[nombre_de_fila, nombre_de_columna] 
+#### 6.1.2 Indexación de matrices y dataframes
+Para indexar un data.frame, debes especificar la posición de los valores dentro de sus dos dimensiones [filas , columnas].
 
 ```R
+# Indexamos usando [numero o nombre de fila, numero o nombre de columna]
 df
 df[1,]
 df[ , 1]
@@ -613,10 +607,8 @@ df[,-3]
 df[,c("genes", "condicion_exp")]
 ```
 
-### Alternativamente podemos usar $
+### 6.1.3 Indexación usando $
 El operador $ se puede utilizar para seleccionar, asignar nuevos valores o crear nuevas variables (columnas) en data.frames, así como elementos en listas.
-
-#### 
 
 ```R
 # $ nos sirve para seleccionar = indexing
@@ -635,7 +627,7 @@ df
 df_mod <- df
 ```
 
-#### Pruebas de declaración
+#### 6.1.4 Indexamos según condiciones
 Podemos usar operadores de comparación para obtener valores TRUE o FALSE.
 Podemos hacer subsetting en función de condiciones usando operadores lógicos
 
@@ -661,8 +653,7 @@ test[test >= 3 & test < 5]
 test[test %in% c(3,5)]
 ```
 
-#### Podemos evaluar si los valores dentro de un vector son numericos o caracteres o que estructura es.
-
+Podemos evaluar si los valores dentro de un vector son numericos o caracteres o que estructura es.
 ```R
 # usando la funcion is.clase() consulto la clase cierto objeto y obtengo resultados TRUE o FALSE
 is.numeric(frutas)
@@ -705,7 +696,7 @@ df_mod[1:3,1, drop = FALSE] # drop=FALSE nos muestra en formato dataframe
 # Guardamos df_mod
 write.csv(df_mod, file = "/home/ins_user/cursoR/results/df_mod.csv")
 ```
-### Datos faltantes ----
+### 6.1.5 Datos faltantes ----
 
 ```R
 concentracion <- c(43, 47, NA, 48, 53, NA)
@@ -733,7 +724,7 @@ jovenes$altura
 df_mod
 ```
 
-#### length(): Devuelve el número total de elementos en un vector o lista.
+#### 6.2.1 length(): Devuelve el número total de elementos en un vector o lista.
 
 Sintaxis: length(x)
 ```R
@@ -744,7 +735,7 @@ length(df_mod)
 length(df_mod$condicion_exp)
 ```
 
-#### unique() : Devuelve los valores únicos de un vector o columna.
+#### 6.2.2 unique() : Devuelve los valores únicos de un vector o columna.
 
 Sintaxis: unique(x)
 ```R
@@ -752,7 +743,7 @@ Sintaxis: unique(x)
 unique(df_mod$condicion_exp)
 ```
 
-#### sort() : Ordena los valores de un vector.
+#### 6.2.3 sort() : Ordena los valores de un vector.
 
 Sintaxis: sort(x, decreasing = TRUE, na.last = TRUE)
 ```R
@@ -762,7 +753,7 @@ sort(df_mod$numero_exones)
 sort(df_mod$numero_exones, decreasing = TRUE)
 ```
 
-#### order() : Ordenar un dataframe por una columna específica.
+#### 6.2.4 order() : Ordenar un dataframe por una columna específica.
 
 Sintaxis: order(x, decreasing = FALSE)
 ```R
@@ -772,7 +763,7 @@ order(df_mod$numero_exones)
 df_mod[order(df_mod$numero_exones),]
 ```
 
-#### table() : Crear una tabla de frecuencias de un vector.
+#### 6.2.5 table() : Crear una tabla de frecuencias de un vector.
 
 Sintaxis: table(x, exclude = NULL, useNA = c("no", "ifany", "always"))
 ```R
@@ -783,7 +774,7 @@ table(df_mod$numero_exones)
 table(concentracion, useNA = "ifany")
 ```
 
-#### subset() seleccionamos una parte de un conjunto de datos (segun condiciones lógicas) o seleccionamos columnas especificas.
+#### 6.2.6 subset() seleccionamos una parte de un conjunto de datos (segun condiciones lógicas) o seleccionamos columnas especificas.
 
 Sintaxis: subset(x, subset, select, drop = FALSE, ...)
 ```R
@@ -797,7 +788,7 @@ subset(df_mod, subset = expresion < 6, select = c(expresion, numero_exones))
 subset(df_mod, select = -numero_exones)
 ```
 
-#### sample() : Muestra aleatoria de un vector.
+#### 6.2.7 sample() : Muestra aleatoria de un vector.
 
 Sintaxis: sample(x, size, replace = FALSE, prob=NULL)
 ```R
@@ -805,7 +796,7 @@ Sintaxis: sample(x, size, replace = FALSE, prob=NULL)
 sample(df_mod$expresion, 2)
 ```
 
-#### summary() : Resumen estadístico de un vector o dataframe.
+#### 6.2.8 summary() : Resumen estadístico de un vector o dataframe.
 
 Sintaxis: summary(x)
 ```R
@@ -817,7 +808,7 @@ summary(df_mod$condicion_exp)
 summary(df_mod$funcion_gen)
 ```
 
-#### duplicated() Verificar si hay elementos duplicados en un vector o dataframe.
+#### 6.2.9 duplicated() Verificar si hay elementos duplicados en un vector o dataframe.
 
 Sintaxis: duplicated(x)
 ```R
@@ -827,7 +818,7 @@ duplicated(df_mod$expresion)
 df_mod[duplicated(df_mod$expresion), ]
 ```
 
-#### which(): Devuelve los índices de las posiciones donde una condición lógica es verdadera
+#### 6.2.10 which(): Devuelve los índices de las posiciones donde una condición lógica es verdadera
 
 Sintaxis: which(x, arr.ind = FALSE)
 ```R
