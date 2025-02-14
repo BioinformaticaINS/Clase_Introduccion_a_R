@@ -397,7 +397,7 @@ Notas5 <- rep(c(1,3,5), each = 2)
 Notas5
 ```
 
-#### Ver la lista de operadores y su significado
+#### Operadores
 
 ```R
 5 == 4
@@ -435,18 +435,8 @@ dim(matrix5)
 ```
 ## 5.4.4 array ----
 Un array es una estructura que puede contener vectores, matrices, todos del mismo tipo en un **número arbitrario de dimensiones**
-
 Creo un array con la función array(data, dim)
-```R
-mi_array <- array(data = 1:16, dim = c(2, 2, 2, 2))
-mi_array
-dim(mi_array)
-mi_array2 <- array(c(1, 2, 3, 4, 5,6), dim = c(3, 1, 2,2))  # Es un array de 3,1,2,2
-mi_array2
-dim(mi_array2)
 
-```
-En estos ejemplos hemos creado arrays de cuatro dimensiones
 
 ## 5.4.5 Dataframes ----
 Es una estructura de datos de **dos dimensiones** que puede almacenar vectores que pueden ser de diferente tipo: **heterogénea**
@@ -537,10 +527,6 @@ Podemos coercionar con la función as_tibble() o crear con la función tibble()
 # Obtenemos un tibble mediante coerción
 tibble_iris <- as_tibble(iris)
 tibble_iris
-
-# creamos un tibble
-tibble2 <- tibble(x = 1:5, y = 1, z = x^2 + y)
-tibble2
 ```
 
 ## 5.4.6 Listas ----
@@ -588,32 +574,23 @@ head(df)	# muestra las 6 primeras filas
 head(df, 2)	# se puede seleccionar numero de filas en n
 tail(df)	# muestra las 6 ultimas filas
 View(df) 	# Mostrar objetos en una ventana separada dentro de RStudio
-
-# Se puede adornar la salida colocando notas
-cat("Las dimensiones son:", dim(df), "\n")
-cat("El número de columnas es:", ncol(df), "\n")
 ```
 
 ### 6.1 Indexación de objetos en R
 
 #### En vectores
 Para indexar un elemento dentro de un vector usando [ ], necesitamos escribir el número de posición del elemento dentro de los corchetes [ ]
-	Nombre_del_vector[ posición_del_elemento]
-Podemos incluso remover valores usando: -
-	Nombre_del_vector[ -posición_del_elemento_a_remover]
-Podemos indexar con condiciones
-	Nombre_del_vector[ nombre_del vector_y_condición]
 
 ```R
 # Creamos el vector v
 v <- c(10, 20, 30, 40, 50)
-# Para seleccionar un solo elemento
+# Para seleccionar un solo elemento: vector[posición_del_elemento]
 v[2]
 # Para seleccionar múltiples elementos
 v[c(1, 3, 5)]
-# Para excluir elementos
+# Para excluir elementos: vector[-posición_del_elemento]
 v[-2]
-# Para indexar con condiciones
+# Para indexar con condiciones: vector[elemento y condicion]
 v[v > 25]
 ```
 
@@ -658,40 +635,9 @@ df
 df_mod <- df
 ```
 
-#### index de una lista: sublistas
-
-```R
-# Creo una lista
-mi_lista <- list(sex_f = c("M", "F", "M", "F"), 
-                 matrix1 = matrix(1:4, nrow = 2, ncol = 2), 
-                 df = df)
-mi_lista
-# indexing con [[]]
-mi_lista[1] # sublista
-mi_lista[[1]]        # vector
-mi_lista[[1]][[1]]   # elementos del vector
-mi_lista[[2]]        # matrix
-mi_lista[[2]][[1,2]] # en elemento de matrix
-mi_lista[[3]]        # dataframe
-mi_lista[[3]][[1,3]] # en elemento de dataframe
-
-# Podemos acceder a los elementos de la lista utilizando $
-mi_lista$sex_f
-mi_lista[["sex_f"]]
-
-# Podemos acceder con la funcion c(): mi_lista[[c(sublista, elemento)]] 
-mi_lista[[c(2,3)]]
-
-# Podemos asignar nombres a cada sublista
-str(mi_lista)
-names(mi_lista) <- c("vector", "matriz", "dataframe")
-str(mi_lista)
-```
-
 #### Pruebas de declaración
 Podemos usar operadores de comparación para obtener valores TRUE o FALSE.
 Podemos hacer subsetting en función de condiciones usando operadores lógicos
-
 
 ```R
 # Creamos el vector test
@@ -713,13 +659,6 @@ test[test < 3 | test > 5]
 test[test >= 3 & test < 5]
 # evaluo x %in% y (match) 
 test[test %in% c(3,5)]
-# Se pueden evaluar numeros y tambien caracteres 
-frutas <- c("uva", "manzana", "fresa", "sandía")
-frutas
-frutas[frutas == "fresa"]
-# frutas == "fresa" compara cada elemento de frutas con la cadena "fresa" y devuelve un vector lógico
-# frutas[frutas == "fresa"] usa este vector lógico para filtrar el elemento de frutas que es igual a "fresa", y devuelve el valor frutas en la pocisión donde se cumple.
-
 ```
 
 #### Podemos evaluar si los valores dentro de un vector son numericos o caracteres o que estructura es.
@@ -771,69 +710,22 @@ write.csv(df_mod, file = "/home/ins_user/cursoR/results/df_mod.csv")
 ```R
 concentracion <- c(43, 47, NA, 48, 53, NA)
 concentracion
-# verificar si hay NA en el vector
+# IGNORAR
+# Primero verifico si hay NA en el vector
 is.na(concentracion)
 # media de concentración eliminando NA
 mean(concentracion)
 mean(concentracion, na.rm = TRUE)
-# Opción A
+# ELIMINAR
 # extraer todos los elementos que no son NA
 is.na(concentracion)
 concentracion[!is.na(concentracion)]
-# Opción B
-# Elimina NA y guarda la posición de los valores eliminados
-na.omit(concentracion)
-# Opción C:
-# genera un vector lógico (TRUE para valores completos y FALSE para los NA).
-complete.cases(concentracion)
-# Filtra los valores completos directamente
-concentracion_cleaned <- concentracion[complete.cases(concentracion)]
-concentracion_cleaned
 # NULL es la ausencia total de datos 
 jovenes <- data.frame(nombre = c("Ana", "Juan", "Luis"), edad = c(25, NA, 30)) 
 jovenes
 jovenes$altura 
 
 ```
-### Condicionales (if, else)
-
-```R
-temperatura <- c(15, 30, 32, 28, 37, 42)
-if (temperatura[1] < 20) {
-  print("Es un clima fresco")
-} else if (temperatura[1] >= 20 & temperatura[1] <= 30) {
-  print("El clima es cálido")
-} else {
-  print("El clima es caluroso")
-}
-
-# condicional for, while, repeat ----
-# ejemplo for
-for (i in 1:5) {
-  print(i)
-}
-# ejemplo while
-i <- 1
-while (i <= 5) { # esta es la condición
-  print(i);
-  i <- i + 1
-}
-```
-
-### Condicional for, hagamos un loop para analizar todos los valores del vector
-
-```R
-for (i in 1:length(temperatura)) {
-  if (temperatura[i] < 20) {
-    print(paste("Temperatura de", temperatura[i],": es un clima fresco"))
-  } else if (temperatura[i] >= 20 & temperatura[i] <= 30) {
-    print(paste("Temperatura de", temperatura[i],": es un clima cálido"))
-  } else {
-    print(paste("Temperatura de", temperatura[i],": es un clima caluroso"))
-  }
-}
-```
-
 ### 6.2 Funciones de Rbase
 
 ```R
@@ -860,9 +752,9 @@ Sintaxis: unique(x)
 unique(df_mod$condicion_exp)
 ```
 
-#### sort() : Ordena los valores de un vector en orden ascendente (por defecto) o descendente.
-Sintaxis: sort(x, decreasing = TRUE, na.last = TRUE)
+#### sort() : Ordena los valores de un vector.
 
+Sintaxis: sort(x, decreasing = TRUE, na.last = TRUE)
 ```R
 # sort() : Ordena y muestra elementos ordenados
 sort(df_mod$numero_exones)
@@ -886,12 +778,9 @@ Sintaxis: table(x, exclude = NULL, useNA = c("no", "ifany", "always"))
 ```R
 # table() : genera tabla de frecuencias
 table(df_mod$numero_exones)
-# exclude especifica los valores que no deseas contar en la tabla
-table(df_mod$numero_exones, exclude = 2)
 # El argumento useNA,  "no" (No se incluirán NA), "ifany" (se incluirán NA solo si existen en el vector)
 # y "always" (Siempre incluir los valores NA, aunque no haya ninguno)
 table(concentracion, useNA = "ifany")
-table(df_mod$numero_exones, useNA = "always")
 ```
 
 #### subset() seleccionamos una parte de un conjunto de datos (segun condiciones lógicas) o seleccionamos columnas especificas.
@@ -914,10 +803,6 @@ Sintaxis: sample(x, size, replace = FALSE, prob=NULL)
 ```R
 # size es el número de elementos que deseas seleccionar de x.
 sample(df_mod$expresion, 2)
-# replace define si los elementos seleccionados pueden repetirse
-sample(df_mod$expresion, 15, replace = TRUE)
-# prob un vector opcional de pesos de probabilidad para obtener los elementos de x.
-sample(df_mod$expresion, 2, replace = FALSE, prob = rep(0.125,8))
 ```
 
 #### summary() : Resumen estadístico de un vector o dataframe.
@@ -950,8 +835,6 @@ Sintaxis: which(x, arr.ind = FALSE)
 which(df_mod$expresion < 7)
 # arr.ind devuelve una matriz con las posiciones por fila y columna
 which(df == "Gen4", , arr.ind = TRUE) 
-# las funciones which.max y which.min permiten obtener el maximo y minimo valor de un vector
-which.max(df_mod$expresion) 
 ```
 
 **Ejercicio** ¿Que gen contiene una expresión de 6.1? 
