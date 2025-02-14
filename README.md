@@ -81,13 +81,13 @@ De esa forma la instalación del Rstudio estará completa. Podemos hacer la bús
 
 ## 1. INTRODUCCION A R /2. INSTALACION ----
 
-### En mi primer script realizare la suma de dos numeros
+En mi primer script realizare la suma de dos numeros
 
 ```R
 1 + 2
 ```
 
-### Directorio de trabajo
+### 1.1 Directorio de trabajo
 
 ```R
 # Consultamos el directorio de trabajo
@@ -96,7 +96,7 @@ getwd()
 setwd("/home/ins_user/cursoR")
 ```
 
-### Creamos y borramos carpetas
+#### Creamos y borramos carpetas
 
 ```R
 #  Creamos Carpetas
@@ -115,7 +115,7 @@ dir.create("/home/ins_user/cursoR/scripts")
 dir.create("/home/ins_user/cursoR/results")
 ```
 
-### Creamos un objeto
+#### Creamos un objeto
 
 ```R
 # Creamos los objetos a, b, x
@@ -301,7 +301,7 @@ View(gene_YY1)
 ## 5. ESTRUCTURA DE DATOS 
 Define qué tipo de valores existen en R
 
-### 5.1 Tipos de datos ----
+### 5.1 Tipos de datos 
 
 Los tipos de datos principales son
 	a) numérico (numeric) que incluye **double** e **integer**
@@ -411,8 +411,6 @@ x %in% y
 ## 5.4.3 Matrices ----
 Las matrices no son más que un conjunto de vectores del mismo tipo apilados, las matrices tienen **dos dimensiones**: filas y columnas
 
-### Creamos matrices
-
 ```R
 # Crear matrices con la función matrix( data, nrow, ncol)
 matrix1 <- matrix(data = 1:10, nrow = 2, ncol = 5)
@@ -459,7 +457,7 @@ nrow(datos_iris)
 ncol(datos_iris)
 ```
 
-### Crear un dataframe
+#### Crear un dataframe
 Pueden ser del mismo tipo o diferente tipo de datos, creamos con la función data.frame()
 
 ```R
@@ -486,9 +484,7 @@ str(df)
 nrow(df)
 ```
 
-### Agregar información de edad al df
-
-con las siguientes opciones:
+Agregar información de edad al df, con las siguientes opciones:
 
 ```R
 #  Opción A
@@ -529,14 +525,14 @@ tibble_iris
 Son estructuras de datos que pueden almacenar, vectores, arrays, dataframes: **heterogéneas**, 
 pero son **unidimensionales** ya que los elementos se almacenan de forma ordenada y no tiene filas ni columnas
 
-### Creamos una lista
+Creamos una lista
 
 ```R
 mi_lista <- list(sex_f, matrix1, df)
 mi_lista
 ```
 
-### Analizo una lista
+Analizo una lista
 
 ```R
 # largo de una lista : número de elementos que contiene
@@ -549,7 +545,7 @@ class(mi_lista)
 
 ## 6. Manipulación de datos con R base ----
 
-#### Recordemos como obtenemos información de una estructura de datos
+Recordemos como obtenemos información de una estructura de datos
 
 ```R
 Creamos nuestro dataframe df
