@@ -963,9 +963,21 @@ which(df_mod == 6.1, arr.ind = TRUE)
 df_mod[which(df_mod == 6.1),]
 ```
 
-## Instalar estos paquetes 
-pacman::p_load(dplyr, ggplot2, RColorBrewer, paletteer, cowplot)
+## Instalemos paquetes para la siguiente clase
 
+## Instalar estos paquetes 
+
+```BASH
+sudo apt update
+sudo apt ungrade
+sudo apt-get install libudunits2-dev libgdal-dev libgeos-dev libproj-dev
+```
+
+
+```R
+pacman::p_load(dplyr, ggplot2, RColorBrewer, paletteer, cowplot)
+pacman::p_load(rnaturalearth, rnaturalearthdata, sf, viridis)
+```
 
 
 
