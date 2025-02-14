@@ -507,14 +507,13 @@ datos
 
 ## 5.4.5.1 Tibble 
 
-### Recordemos que estructura tiene la data iris
-
+Recordemos que estructura tiene la data iris
 ```R
 df_iris <- iris
 df_iris
 ```
 
-### Para manipular tibble necesitamos el paquete tibble
+Para manipular tibble necesitamos el paquete tibble
 
 ```R
 install.packages("tibble")
@@ -550,7 +549,7 @@ class(mi_lista)
 
 ## 6. Manipulación de datos con R base ----
 
-### Recordemos como obtenemos información de una estructura de datos
+#### Recordemos como obtenemos información de una estructura de datos
 
 ```R
 Creamos nuestro dataframe df
@@ -607,7 +606,7 @@ df[,-3]
 df[,c("genes", "condicion_exp")]
 ```
 
-### 6.1.3 Indexación usando $
+#### 6.1.3 Indexación usando $
 El operador $ se puede utilizar para seleccionar, asignar nuevos valores o crear nuevas variables (columnas) en data.frames, así como elementos en listas.
 
 ```R
@@ -696,7 +695,7 @@ df_mod[1:3,1, drop = FALSE] # drop=FALSE nos muestra en formato dataframe
 # Guardamos df_mod
 write.csv(df_mod, file = "/home/ins_user/cursoR/results/df_mod.csv")
 ```
-### 6.1.5 Datos faltantes ----
+#### 6.1.5 Datos faltantes ----
 
 ```R
 concentracion <- c(43, 47, NA, 48, 53, NA)
